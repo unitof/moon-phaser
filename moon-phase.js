@@ -88,7 +88,7 @@ function phase_junk(phase) {
 
         if (supportsSVG()) {
           // http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands
-          var d = "m100,0 ";
+          var d = "m75,0 ";
           d = d + "a" + mag + ",20 0 1," + sweep[0] + " 0,150 ";
           d = d + "a20,20 0 1," + sweep[1] + " 0,-150";
           // http://www.i-programmer.info/programming/graphics-and-imaging/3254-svg-javascript-and-the-dom.html
@@ -96,11 +96,11 @@ function phase_junk(phase) {
           var path = document.createElementNS(xmlns, 'path');
           var back = document.createElementNS(xmlns, 'path');
           back.setAttribute('class', 'moonback');
-          back.setAttribute('d', "m100,0 a20,20 0 1,1 0,150 a20,20 0 1,1 0,-150");
+          back.setAttribute('d', "m75,0 a20,20 0 1,1 0,150 a20,20 0 1,1 0,-150");
           path.setAttribute('class', 'moon');
           path.setAttribute('d', d);
-          svg.setAttribute('height', window.screen.availHeight * 0.8);
-          svg.setAttribute('width', window.screen.availWidth * 0.8);
+          svg.setAttribute('height', 150);
+          svg.setAttribute('width', 150);
           svg.appendChild(back);
           svg.appendChild(path);
         } else if (supportsVML()) {
