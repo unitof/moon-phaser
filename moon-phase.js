@@ -67,44 +67,47 @@ function phase_junk(phase) {
 
     var svg = document.getElementById("moon");
 	if (svg != false && svg != null) {
-    // http://stackoverflow.com/questions/654112/how-do-you-detect-support-for-vml-or-svg-in-a-browser/5493614#5493614
-    // https://github.com/Modernizr/Modernizr/blob/master/modernizr.js
-    function supportsSVG() {
-      return !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect;
-    }
-    function supportsVML() {
-        if (typeof supportsVml.supported == "undefined") {
-            var a = document.body.appendChild(document.createElement('div'));
-            a.innerHTML = '<v:shape id="vml_flag1" adj="1" />';
-            var b = a.firstChild;
-            b.style.behavior = "url(#default#VML)";
-            supportsVml.supported = b ? typeof b.adj == "object": true;
-            a.parentNode.removeChild(a);
+        // http://stackoverflow.com/questions/654112/how-do-you-detect-support-for-vml-or-svg-in-a-browser/5493614#5493614
+        // https://github.com/Modernizr/Modernizr/blob/master/modernizr.js
+
+        function supportsSVG() {
+          return !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect;
         }
-        return supportsVml.supported;
-    }
-    if (supportsSVG()) {
-      // http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands
-      var d = "m100,0 ";
-      d = d + "a" + mag + ",20 0 1," + sweep[0] + " 0,150 ";
-      d = d + "a20,20 0 1," + sweep[1] + " 0,-150";
-      // http://www.i-programmer.info/programming/graphics-and-imaging/3254-svg-javascript-and-the-dom.html
-      var xmlns = "http://www.w3.org/2000/svg";
-      var path = document.createElementNS(xmlns, 'path');
-      var back = document.createElementNS(xmlns, 'path');
-      back.setAttribute('class', 'moonback');
-      back.setAttribute('d', "m100,0 a20,20 0 1,1 0,150 a20,20 0 1,1 0,-150");
-      path.setAttribute('class', 'moon');
-      path.setAttribute('d', d);
-      svg.setAttribute('height', window.screen.availHeight * 0.8);
-      svg.setAttribute('width', window.screen.availWidth * 0.8);
-      svg.appendChild(back);
-      svg.appendChild(path);
-    } else if (supportsVML()) {
-      // http://vectorconverter.svn.sourceforge.net/viewvc/vectorconverter/trunk/svg2vml.xsl?revision=2&view=markup
-      // http://stackoverflow.com/questions/7677145/calling-xslt-from-javascript
-      // this will be IE almost always anyways, so could use IE specific xslt
-    }
+
+        function supportsVML() {
+            if (typeof supportsVml.supported == "undefined") {
+                var a = document.body.appendChild(document.createElement('div'));
+                a.innerHTML = '<v:shape id="vml_flag1" adj="1" />';
+                var b = a.firstChild;
+                b.style.behavior = "url(#default#VML)";
+                supportsVml.supported = b ? typeof b.adj == "object": true;
+                a.parentNode.removeChild(a);
+            }
+            return supportsVml.supported;
+        }
+
+        if (supportsSVG()) {
+          // http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands
+          var d = "m100,0 ";
+          d = d + "a" + mag + ",20 0 1," + sweep[0] + " 0,150 ";
+          d = d + "a20,20 0 1," + sweep[1] + " 0,-150";
+          // http://www.i-programmer.info/programming/graphics-and-imaging/3254-svg-javascript-and-the-dom.html
+          var xmlns = "http://www.w3.org/2000/svg";
+          var path = document.createElementNS(xmlns, 'path');
+          var back = document.createElementNS(xmlns, 'path');
+          back.setAttribute('class', 'moonback');
+          back.setAttribute('d', "m100,0 a20,20 0 1,1 0,150 a20,20 0 1,1 0,-150");
+          path.setAttribute('class', 'moon');
+          path.setAttribute('d', d);
+          svg.setAttribute('height', window.screen.availHeight * 0.8);
+          svg.setAttribute('width', window.screen.availWidth * 0.8);
+          svg.appendChild(back);
+          svg.appendChild(path);
+        } else if (supportsVML()) {
+          // http://vectorconverter.svn.sourceforge.net/viewvc/vectorconverter/trunk/svg2vml.xsl?revision=2&view=markup
+          // http://stackoverflow.com/questions/7677145/calling-xslt-from-javascript
+          // this will be IE almost always anyways, so could use IE specific xslt
+        }
 	}
 }
 
