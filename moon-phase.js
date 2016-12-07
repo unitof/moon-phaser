@@ -74,18 +74,6 @@ function phase_junk(phase) {
           return !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect;
         }
 
-        function supportsVML() {
-            if (typeof supportsVml.supported == "undefined") {
-                var a = document.body.appendChild(document.createElement('div'));
-                a.innerHTML = '<v:shape id="vml_flag1" adj="1" />';
-                var b = a.firstChild;
-                b.style.behavior = "url(#default#VML)";
-                supportsVml.supported = b ? typeof b.adj == "object": true;
-                a.parentNode.removeChild(a);
-            }
-            return supportsVml.supported;
-        }
-
         if (supportsSVG()) {
           // http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands
           var d = "m75,0 ";
@@ -103,10 +91,8 @@ function phase_junk(phase) {
           svg.setAttribute('width', 150);
           // svg.appendChild(back); // uncomment to draw black dark side of moon
           svg.appendChild(path);
-        } else if (supportsVML()) {
-          // http://vectorconverter.svn.sourceforge.net/viewvc/vectorconverter/trunk/svg2vml.xsl?revision=2&view=markup
-          // http://stackoverflow.com/questions/7677145/calling-xslt-from-javascript
-          // this will be IE almost always anyways, so could use IE specific xslt
+        } else {
+            // draw a static image?
         }
 	}
 }
