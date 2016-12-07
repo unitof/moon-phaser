@@ -64,29 +64,7 @@ function phase_junk(phase) {
     } else {
         exit;
     }
-    var unicode_moon;
-    if (phase <= 0.0625 || phase > 0.9375) {
-        unicode_moon = "\uD83C\uDF11";
-    } else if (phase <= 0.1875) {
-        unicode_moon = "\uD83C\uDF12";
-    } else if (phase <= 0.3125) {
-        unicode_moon = "\uD83C\uDF13";
-    } else if (phase <= 0.4375) {
-        unicode_moon = "\uD83C\uDF14";
-    } else if (phase <= 0.5625) {
-        unicode_moon = "\uD83C\uDF15";
-    } else if (phase <= 0.6875) {
-        unicode_moon = "\uD83C\uDF16";
-    } else if (phase <= 0.8125) {
-        unicode_moon = "\uD83C\uDF17";
-    } else if (phase <= 0.9375) {
-        unicode_moon = "\uD83C\uDF18";
-    }
-    // IE does not work with .innnerHTML'ing the title
-    // http://stackoverflow.com/questions/12114477/how-do-i-correctly-insert-unicode-in-an-html-title-using-javascript
-    // document.getElementsByTagName("title")[0].innerHTML = document.title + '  &#x' + unicode_moon + ";";
-    // http://stackoverflow.com/questions/3059166/does-string-fromcharcodedecimal-value-in-javascript-supports-extended-characte
-    document.title = document.title + " " + unicode_moon;
+
     var svg = document.getElementById("moon");
 	if (svg != false && svg != null) {
     // http://stackoverflow.com/questions/654112/how-do-you-detect-support-for-vml-or-svg-in-a-browser/5493614#5493614
