@@ -52,7 +52,7 @@ function phase_junk(phase) {
     if (phase <= 0.25) {
         sweep = [ 1, 0 ];
         mag = 20 - 20 * phase * 4
-    } else if (phase <= 0.50) { 
+    } else if (phase <= 0.50) {
         sweep = [ 0, 0 ];
         mag = 20 * (phase - 0.25) * 4
     } else if (phase <= 0.75) {
@@ -61,8 +61,8 @@ function phase_junk(phase) {
     } else if (phase <= 1) {
         sweep = [ 0, 1 ];
         mag = 20 * (phase - 0.75) * 4
-    } else { 
-        exit; 
+    } else {
+        exit;
     }
     var unicode_moon;
     if (phase <= 0.0625 || phase > 0.9375) {
@@ -105,7 +105,7 @@ function phase_junk(phase) {
         }
         return supportsVml.supported;
     }
-    if (supportsSVG()) {  
+    if (supportsSVG()) {
       // http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands
       var d = "m100,0 ";
       d = d + "a" + mag + ",20 0 1," + sweep[0] + " 0,150 ";
