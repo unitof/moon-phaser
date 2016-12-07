@@ -65,7 +65,7 @@ function phase_junk(phase) {
         exit;
     }
 
-    var svg = document.getElementById("moon");
+    var svg = document.getElementById("moon-holder");
 	if (svg != false && svg != null) {
         // http://stackoverflow.com/questions/654112/how-do-you-detect-support-for-vml-or-svg-in-a-browser/5493614#5493614
         // https://github.com/Modernizr/Modernizr/blob/master/modernizr.js

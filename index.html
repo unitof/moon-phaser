@@ -12,35 +12,27 @@
         fill: black;
       }
 
+      #moon-holder {
+        flex: auto;
+        width: 50vh;
+        height:  50vh;
+      }
+
       body {
         background-color: black;
-        overflow: hidden;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 40px;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
       }
-      /* #moon { margin-top: 3em; } */
     </style>
     <meta charset="utf-8" />
-    <!-- http://matt.might.net/articles/how-to-native-iphone-ipad-apps-in-javascript/ -->
-    <!-- meta name="apple-mobile-web-app-capable" content="yes" / -->
-    <!-- meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" / -->
-    <meta name="viewport" content="width=device-width" / >
   </head>
   <body>
-    <svg id="moon" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" version="1.1"/>
+    <svg id="moon-holder" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" version="1.1"/>
   </body>
   <script type="text/javascript" src="moon-phase.js" charset="UTF-8"></script>
-  <script type="text/javascript" charset="UTF-8">
-  // http://tutorialzine.com/2010/03/centering-div-vertically-and-horizontally/
-  function center(){
-    moonelement=document.getElementById('moon')
-    moonelement.style.position='absolute';
-    moonelement.style.left=((document.body.clientWidth - moonelement.offsetWidth)/2);
-    moonelement.style.top=((window.innerHeight - moonelement.offsetHeight)/2);
-    console.log(document.body.clientWidth);
-    console.log(Math.max( window.innerHeight, document.body.clientHeight ));
-  }
-  window.onresize = function(){
-    center();
-  };
-  center();
-  </script>
 </html>
