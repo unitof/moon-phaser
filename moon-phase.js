@@ -101,7 +101,7 @@ function phase_junk(phase) {
           path.setAttribute('d', d);
           svg.setAttribute('height', 150);
           svg.setAttribute('width', 150);
-          svg.appendChild(back);
+          // svg.appendChild(back); // uncomment to draw black dark side of moon
           svg.appendChild(path);
         } else if (supportsVML()) {
           // http://vectorconverter.svn.sourceforge.net/viewvc/vectorconverter/trunk/svg2vml.xsl?revision=2&view=markup
