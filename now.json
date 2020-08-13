@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": [
-    "moon.sex"
-  ]
+  "github": {
+    "silent": true
+  }
 }
