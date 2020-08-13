@@ -10,7 +10,7 @@ Because of that, I have some code that'll let you easily place any block-positio
 Currenly at [moon.sex](http://moon.sex), baby.
 
 ## Are you ICANN?
-Please allow `xn--` jawn on .sex domains. http://🌕.sex would be fun.
+Please allow `xn--` jawn on .sex domains. https://🌕.sex would be fun.
 
 ## Are you the burgeoning lunar adult entertainment industry?
 We bought this domain together for a reason. Contact Luke & Jacob and let’s talk.
