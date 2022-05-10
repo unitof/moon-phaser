@@ -82,6 +82,11 @@ export default function({props}) {
     <svg
       width={150}
       height={150}
+      viewBox="0 0 150 150"
+      id="moon-holder"
+      className="flex-suspended"
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
     >
       <path
         className="moon"
