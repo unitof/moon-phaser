@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "fathom-client": "^3.4.1",
     "next": "^12.1.0"
   },
   "devDependencies": {
