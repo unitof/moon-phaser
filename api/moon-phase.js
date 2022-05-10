@@ -44,57 +44,54 @@ function moon_day(today) {
     return (((thisJD - oldJ) / 29.53059));
 }
 
-function phase_junk(phase) {
-    var sweep = [];
-    var mag;
-    // the "sweep-flag" and the direction of movement change every quarter moon
-    // zero and one are both new moon; 0.50 is full moon
-    if (phase <= 0.25) {
-        sweep = [ 1, 0 ];
-        mag = 20 - 20 * phase * 4
-    } else if (phase <= 0.50) {
-        sweep = [ 0, 0 ];
-        mag = 20 * (phase - 0.25) * 4
-    } else if (phase <= 0.75) {
-        sweep = [ 1, 1 ];
-        mag = 20 - 20 * (phase - 0.50) * 4
-    } else if (phase <= 1) {
-        sweep = [ 0, 1 ];
-        mag = 20 * (phase - 0.75) * 4
-    } else {
-        exit;
-    }
+function calculatePathD(phase) {
+  var sweep = [];
+  var mag;
+  // the "sweep-flag" and the direction of movement change every quarter moon
+  // zero and one are both new moon; 0.50 is full moon
+  if (phase <= 0.25) {
+      sweep = [ 1, 0 ];
+      mag = 20 - 20 * phase * 4
+  } else if (phase <= 0.50) {
+      sweep = [ 0, 0 ];
+      mag = 20 * (phase - 0.25) * 4
+  } else if (phase <= 0.75) {
+      sweep = [ 1, 1 ];
+      mag = 20 - 20 * (phase - 0.50) * 4
+  } else if (phase <= 1) {
+      sweep = [ 0, 1 ];
+      mag = 20 * (phase - 0.75) * 4
+  } else {
+      exit;
+  }
 
-    var svg = document.getElementById("moon-holder");
-	if (svg != false && svg != null) {
-        // http://stackoverflow.com/questions/654112/how-do-you-detect-support-for-vml-or-svg-in-a-browser/5493614#5493614
-        // https://github.com/Modernizr/Modernizr/blob/master/modernizr.js
+  var d = "m75,0 ";
+  d = d + "a" + mag + ",20 0 1," + sweep[0] + " 0,150 ";
+  d = d + "a20,20 0 1," + sweep[1] + " 0,-150";
 
-        function supportsSVG() {
-          return !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect;
-        }
-
-        if (supportsSVG()) {
-          // http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands
-          var d = "m75,0 ";
-          d = d + "a" + mag + ",20 0 1," + sweep[0] + " 0,150 ";
-          d = d + "a20,20 0 1," + sweep[1] + " 0,-150";
-          // http://www.i-programmer.info/programming/graphics-and-imaging/3254-svg-javascript-and-the-dom.html
-          var xmlns = "http://www.w3.org/2000/svg";
-          var path = document.createElementNS(xmlns, 'path');
-          var back = document.createElementNS(xmlns, 'path');
-          back.setAttribute('class', 'moonback');
-          back.setAttribute('d', "m75,0 a20,20 0 1,1 0,150 a20,20 0 1,1 0,-150");
-          path.setAttribute('class', 'moon');
-          path.setAttribute('d', d);
-          svg.setAttribute('height', 150);
-          svg.setAttribute('width', 150);
-          // svg.appendChild(back); // uncomment to draw black dark side of moon
-          svg.appendChild(path);
-        } else {
-            // draw a static image?
-        }
-	}
+  return d
 }
 
-phase_junk(moon_day(new Date()));
+
+
+// http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands
+
+
+export default function({props}) {
+  return (
+    <svg
+      width={150}
+      height={150}
+    >
+      <path
+        className="moon"
+        d={calculatePathD(moon_day(new Date()))}
+      >
+      </path>
+    </svg>
+  )
+}
+
+// var back = document.createElementNS(xmlns, 'path');
+// back.setAttribute('class', 'moonback');
+// svg.appendChild(back); // uncomment to draw black dark side of moon
