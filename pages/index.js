@@ -49,7 +49,7 @@ export default function Page() {
     <html>
       <head>
         <title>The Moon</title>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <style>{styles}</style>
       </head>
       <body>
