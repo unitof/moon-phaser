@@ -53,7 +53,7 @@ export default function Page() {
         <style>{styles}</style>
       </head>
       <body>
-        <div class="flex-suspender">
+        <div className="flex-suspender">
           <Moon/>
         </div>
       </body>
