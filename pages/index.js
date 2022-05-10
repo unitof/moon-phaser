@@ -57,7 +57,6 @@ export default function Page() {
           <Moon/>
         </div>
       </body>
-      <script type="text/javascript" src="/api/moon-phase.js" charset="UTF-8"></script>
     </html>
   )
 }
