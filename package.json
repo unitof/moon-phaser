@@ -2,8 +2,5 @@
   "dependencies": {
     "fathom-client": "^3.4.1",
     "next": "^14.2.3"
-  },
-  "devDependencies": {
-    "vercel": "^24.2.1"
   }
 }
