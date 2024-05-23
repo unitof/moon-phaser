@@ -9,7 +9,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <style>{styles}</style>
       </head>
       <body>
         <Fathom/>
