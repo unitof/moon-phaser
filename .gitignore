@@ -1,6 +1,7 @@
 ###Vercel###
 
 .vercel
+.turbo
 
 
 ###Node###
