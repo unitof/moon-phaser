@@ -1,4 +1,3 @@
-// Fathom.tsx
 'use client';
 
 const fathomSideId = process.env.NEXT_PUBLIC_FATHOM_SITEID || '';
