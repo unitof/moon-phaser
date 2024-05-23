@@ -46,7 +46,7 @@ body {
 
 export default function Page() {
   return (
-    <html>
+    <>
       <head>
         <title>The Moon</title>
         <meta charSet="utf-8" />
@@ -57,6 +57,6 @@ export default function Page() {
           <Moon/>
         </div>
       </body>
-    </html>
+    </>
   )
 }
