@@ -11,7 +11,10 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <style>{styles}</style>
       </head>
-      <body>{children}</body>
+      <body>
+        <Fathom/>
+        <Page>{children}</Page>
+      </body>
     </html>
   )
 }
