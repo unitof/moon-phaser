@@ -1,9 +1,6 @@
 {
   "dependencies": {
     "fathom-client": "^3.4.1",
-    "next": "^12.1.0"
-  },
-  "devDependencies": {
-    "vercel": "^24.2.1"
+    "next": "^14.2.3"
   }
 }
