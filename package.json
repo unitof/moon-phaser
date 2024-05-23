@@ -1,6 +1,15 @@
 {
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev"
+  },
   "dependencies": {
     "fathom-client": "^3.4.1",
     "next": "^14.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
+    "typescript": "5.4.5"
   }
 }
