@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "next build"
+    "build": "next build",
+    "dev": "next dev"
   },
   "dependencies": {
     "fathom-client": "^3.4.1",
