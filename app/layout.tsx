@@ -1,4 +1,5 @@
 import Fathom from './Fathom'
+import './global.css'
 
 export default function RootLayout({
   children,
